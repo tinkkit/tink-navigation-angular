@@ -43,7 +43,7 @@ Logo and company name are automatically handled in `.nav-top-branding`.
 
 All the other elements go in `.nav-top-section`, which is handily divided into three sections:
 
-* `.nav-top-section-left
+* `.nav-top-section-left`
 * `.nav-top-section-center`
 * `.nav-top-section-right`
 
