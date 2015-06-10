@@ -1,6 +1,6 @@
 # Tink navigation Angular directive
 
-v1.0.2
+v1.0.3
 
 ## What is this repository for?
 
@@ -19,23 +19,33 @@ Tink is an in-house developed easy-to-use front-end framework for quick prototyp
 
 1. Go to the root of your project and type the following command in your terminal:
 
-  `bower install tink-navigation-angular --save`
+   `bower install tink-navigation-angular --save`
 
 2. Add the following files to your project:
 
-  `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
+   `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
 
-  `<script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>`
+   `<script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>`
+
+   `<script src="bower_components/lodash/lodash.js"></script>`
+
+   `<script src="bower_components/tink-api-javascript/dist/tink-api-javascript.js"></script>`
+
+   `<script src="bower_components/tink-api-angular/dist/tink-api-angular.js"></script>`
+
+3. Add `tink.navigation` and `tink.tinkApi` to your app module's dependency.
+
+   `angular.module('myApp', ['tink.navigation', 'tink.tinkApi']);`
+
 
 
 ----------
 
 
+
 ## How to use
 
 ### data-tink-top-nav
-
-### Component
 
 The `.nav-top` class makes sure the top navigation uses the Tink styling.
 
@@ -93,8 +103,6 @@ Use this attribute on the `.toggle item.
 
 ### data-tink-nav-aside
 
-### Component
-
 The `.nav-aside` class makes sure the side navigation uses the Tink styling.
 
 Use multiple instances of `.nav-aside-section`, to divide the menu into multiple sections.
@@ -114,7 +122,7 @@ Add `data-tink-nav-aside` to the `.nav-aside element in order to activate extra 
 
 The extra class `.nav-left` or `.nav-right` in the wrapping div will determine where your menu is positioned.
 
-> **Important!** Add class="has-nav-left" or class="has-nav-right" to your <html> in order to create the extra (needed) space and behaviour for your side navigation.
+> **Important!** Add class="has-nav-left" or class="has-nav-right" to your `<html> in order to create the extra (needed) space and behaviour for your side navigation.
 
 ```html
 <div data-tink-nav-aside="" data-auto-select="true" data-toggle-id="asideNavLeft" class="nav-aside nav-left">
@@ -184,6 +192,10 @@ sideNav.init({
 // to open or close the menu
 sideNav.toggleMenu();
 ```
+
+### Example
+
+A working example can be found in [the Tink documentation](http://tink.digipolis.be/#/docs/directives/navigation#example).
 
 ## Contribution guidelines
 
