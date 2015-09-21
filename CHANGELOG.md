@@ -15,10 +15,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 -->
 
 
+## [1.1.0] - 2015-09-21
+
+### Changed
+- Adjusted code, docs and unit tests to work with the new flex version of the top navigation
+
+
+
 ## [1.0.4] - 2015-07-29
 
 ### Changed
 - Changed version angular to 1.4.3
+
+
 
 ## [1.0.3] - 2015-06-10
 

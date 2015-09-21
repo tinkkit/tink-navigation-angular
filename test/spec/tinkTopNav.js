@@ -39,27 +39,21 @@ describe('TopNavigation', function() {
     'default': {
       scope: {selectedDate: new Date()},
       element: '<nav data-tink-top-nav class="nav-top">'+
-      '<ul class="nav-top-branding">'+
-      '<li class="logo">'+
+      '<ul class="nav-top-left">'+
+      '<li class="nav-top-logo">'+
       '<a href="#" title=""><span>My App</span></a>'+
       '</li>'+
-      '<li class="toggle">'+
+      '<li class="nav-top-toggle">'+
       '<a href="#" title="Open menu" data-ng-click="sidenav.open = !sidenav.open"><i class="fa fa-bars"><span class="sr-only">Open menu</span></i></a>'+
       '</li>'+
-      '<li class="app">'+
-      ' <h1><a href="#">My App</a></h1>'+
+      '<li class="nav-top-app">'+
+      '<h1><a href="#">My App</a></h1>'+
       '</li>'+
-      '</ul>'+
-      '<section class="nav-top-section">'+
-      '<ul class="nav-top-section-left">'+
       '<li>'+
       '<a href="#">Menu L1</a>'+
       '</li>'+
       '</ul>'+
-      '<div class="nav-top-section-center">'+
-      '<input type="search" class="input-search" placeholder="Zoeken" />'+
-      '</div>'+
-      '<ul class="nav-top-section-right">'+
+      '<ul class="nav-top-right">'+
       '<li class="active">'+
       '<a href="#">Menu R1</a>'+
       '</li>'+
@@ -67,34 +61,30 @@ describe('TopNavigation', function() {
       '<a href="#">Menu R2</a>'+
       '</li>'+
       '</ul>'+
-      '</section>'+
+      '<div class="nav-top-center">'+
+      '<input type="search" class="input-search" placeholder="Zoeken" />'+
+      '</div>'+
       '</nav>'
     },
     'withSidenav': {
       scope: {selectedDate: new Date()},
       element:
       '<nav data-tink-top-nav class="nav-top">'+
-      '<ul class="nav-top-branding">'+
-      '<li class="logo">'+
+      '<ul class="nav-top-left">'+
+      '<li class="nav-top-logo">'+
       '<a href="#" title=""><span>My App</span></a>'+
       '</li>'+
-      '<li class="toggle" data-tink-sidenav-collapse="sidenav">'+
+      '<li class="nav-top-toggle" data-tink-sidenav-collapse="sidenav">'+
       '<a href="#" title="Open menu" data-ng-click="sidenav.open = !sidenav.open"><i class="fa fa-bars"><span class="sr-only">Open menu</span></i></a>'+
       '</li>'+
-      '<li class="app">'+
-      ' <h1><a href="#">My App</a></h1>'+
+      '<li class="nav-top-app">'+
+      '<h1><a href="#">My App</a></h1>'+
       '</li>'+
-      '</ul>'+
-      '<section class="nav-top-section">'+
-      '<ul class="nav-top-section-left">'+
       '<li>'+
       '<a href="#">Menu L1</a>'+
       '</li>'+
       '</ul>'+
-      '<div class="nav-top-section-center">'+
-      '<input type="search" class="input-search" placeholder="Zoeken" />'+
-      '</div>'+
-      '<ul class="nav-top-section-right">'+
+      '<ul class="nav-top-right">'+
       '<li class="active">'+
       '<a href="#">Menu R1</a>'+
       '</li>'+
@@ -102,7 +92,9 @@ describe('TopNavigation', function() {
       '<a href="#">Menu R2</a>'+
       '</li>'+
       '</ul>'+
-      '</section>'+
+      '<div class="nav-top-center">'+
+      '<input type="search" class="input-search" placeholder="Zoeken" />'+
+      '</div>'+
       '</nav>'+
       '<aside data-tink-nav-aside data-toggle-id="sidenav" class="nav-left">'+
       '<ul class="nav-aside-list" role="sidenav">'+
@@ -147,7 +139,7 @@ describe('TopNavigation', function() {
 
     it('when clicked on toggle add class to sideNavigation',function(){
       var elm = compileDirective('withSidenav');
-      elm.find('li.toggle').triggerHandler('click');
+      elm.find('li.nav-top-toggle').triggerHandler('click');
       scope.$digest();
       expect($('html').hasClass('nav-left-open')).toBe(true);
     });
@@ -155,17 +147,17 @@ describe('TopNavigation', function() {
     it('when click on toggle expect function to be called',function(){
       var elm = compileDirective('withSidenav');
       var spyToggle = spyOn(tinkApi.sideNavToggle,'toggleById');
-      elm.find('li.toggle').triggerHandler('click');
+      elm.find('li.nav-top-toggle').triggerHandler('click');
       scope.$digest();
       expect(spyToggle).toHaveBeenCalled();
     });
 
     it('when sidenav is open close it again',function(){
       var elm = compileDirective('withSidenav');
-      elm.find('li.toggle').triggerHandler('click');
+      elm.find('li.nav-top-toggle').triggerHandler('click');
       scope.$digest();
       expect($('html').hasClass('nav-left-open')).toBe(true);
-      elm.find('li.toggle').triggerHandler('click');
+      elm.find('li.nav-top-toggle').triggerHandler('click');
       scope.$digest();
       expect($('html').hasClass('nav-left-open')).toBe(false);
     });
