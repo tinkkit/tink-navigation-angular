@@ -49,48 +49,49 @@ Tink is an in-house developed easy-to-use front-end framework for quick prototyp
 
 The `.nav-top` class makes sure the top navigation uses the Tink styling.
 
-Logo and company name are automatically handled in `.nav-top-branding`.
+You can divide it in three sections (we assume the naming needs no explanation):
 
-All the other elements go in `.nav-top-section`, which is handily divided into three sections:
+* `.nav-top-left`
+* `.nav-top-right`
+* `.nav-top-center`
 
-* `.nav-top-section-left`
-* `.nav-top-section-center`
-* `.nav-top-section-right`
+Logo, company name and side navigation toggle go in `.nav-top-left`, each with their own class.
+
+**Very important!**
+To guarantee complete compatibility with Internet Explorer 9 `.nav-top-center` must come last in your html code.
 
 ```html
 <nav data-tink-top-nav="" class="nav-top">
-  <ul class="nav-top-branding">
-    <li class="logo">
+  <ul class="nav-top-left">
+    <li class="nav-top-logo">
       <a href="#" title=""><span>Your Project</span></a>
     </li>
-    <li class="toggle" data-tink-sidenav-collapse="asideNavLeft">
+    <li class="nav-top-toggle" data-tink-sidenav-collapse="asideNavLeft">
       <a href="#" title="Open menu"><i class="fa fa-bars"><span class="sr-only">Open menu</span></i></a>
     </li>
-    <li class="app">
+    <li class="nav-top-app">
       <h1><a href="#">My App</a></h1>
     </li>
+    <li>
+      <a href="#">Menu L1</a>
+    </li>
+    <li>
+      <a href="#">Menu L2</a>
+    </li>
   </ul>
-  <section class="nav-top-section">
-    <ul class="nav-top-section-left">
-      <li>
-        <a href="#">Menu L1</a>
-      </li>
-      <li>
-        <a href="#">Menu L2</a>
-      </li>
-    </ul>
-    <div class="nav-top-section-center">
+  <ul class="nav-top-right">
+    <li class="active">
+      <a href="#">Menu R1</a>
+    </li>
+    <li>
+      <a href="#">Menu R2</a>
+    </li>
+  </ul>
+  <ul class="nav-top-center">
+    <li>
       <input type="search" class="input-search" placeholder="Zoeken">
-    </div>
-    <ul class="nav-top-section-right">
-      <li class="active">
-        <a href="#">Menu R1</a>
-      </li>
-      <li>
-        <a href="#">Menu R2</a>
-      </li>
-    </ul>
-  </section>
+    </li>
+  </ul>
 </nav>
 ```
 
