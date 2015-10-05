@@ -123,7 +123,7 @@ Add `data-tink-nav-aside` to the `.nav-aside element in order to activate extra 
 
 The extra class `.nav-left` or `.nav-right` in the wrapping div will determine where your menu is positioned.
 
-> **Important!** Add class="has-nav-left" or class="has-nav-right" to your `<html> in order to create the extra (needed) space and behaviour for your side navigation.
+> **Important!** Add class="has-nav-left" or class="has-nav-right" to your `<html>` in order to create the extra (needed) space and behaviour for your side navigation.
 
 ```html
 <div data-tink-nav-aside="" data-auto-select="true" data-toggle-id="asideNavLeft" class="nav-aside nav-left">
