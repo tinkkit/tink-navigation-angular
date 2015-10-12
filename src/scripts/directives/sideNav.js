@@ -5,23 +5,26 @@
   } catch (e) {
     module = angular.module('tink.navigation', ['tink.tinkApi']);
   }
-  module.directive('tinkNavAside',['tinkApi',function(tinkApi){
+  module.directive('tinkNavAside',['tinkApi', '$timeout',function(tinkApi, $timeout){
    return {
     restrict:'AE',
     link:function(scope,elem,attr){
-      if(!tinkApi.sideNavigation || !tinkApi.sideNavToggle){
-        return;
-      }
 
-      var opts= {};
-      if(attr.autoSelect){
-        opts.autoSelect = (attr.autoSelect === 'true');
-      }
-      var sideNav = tinkApi.sideNavigation(elem);
-      sideNav.init(opts);
-      if(attr.toggleId){
-        tinkApi.sideNavToggle.register(attr.toggleId,sideNav);
-      }
+      $timeout(function() {
+        if(!tinkApi.sideNavigation || !tinkApi.sideNavToggle){
+          return;
+        }
+
+        var opts= {};
+        if(attr.autoSelect){
+          opts.autoSelect = (attr.autoSelect === 'true');
+        }
+        var sideNav = tinkApi.sideNavigation(elem);
+        sideNav.init(opts);
+        if(attr.toggleId){
+          tinkApi.sideNavToggle.register(attr.toggleId,sideNav);
+        }
+      });
     }
 };
 }]);
