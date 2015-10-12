@@ -15,7 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 -->
 
 
-## [1.1.2] - 2015-10-06
+## [1.2.0] - 2015-10-12
 
 ### Changed
 - The sidenav now supports dynamic menu items
