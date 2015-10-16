@@ -137,12 +137,15 @@ describe('TopNavigation', function() {
       $('html').removeClass('nav-left-open');
     });
 
-    // it('when clicked on toggle add class to sideNavigation',function(){
-    //   var elm = compileDirective('withSidenav');
-    //   elm.find('li.nav-top-toggle').triggerHandler('click');
-    //   scope.$digest();
-    //   expect($('html').hasClass('nav-left-open')).toBe(true);
-    // });
+    it('when clicked on toggle add class to sideNavigation',function(){
+      var elm = compileDirective('withSidenav');
+      elm.find('li.nav-top-toggle').triggerHandler('click');
+      scope.$apply();
+      setTimeout(function(){
+        expect($('html').hasClass('nav-left-open')).toBe(true);
+      },0);
+      
+    });
 
     it('when click on toggle expect function to be called',function(){
       var elm = compileDirective('withSidenav');
@@ -152,15 +155,19 @@ describe('TopNavigation', function() {
       expect(spyToggle).toHaveBeenCalled();
     });
 
-    // it('when sidenav is open close it again',function(){
-    //   var elm = compileDirective('withSidenav');
-    //   elm.find('li.nav-top-toggle').triggerHandler('click');
-    //   scope.$digest();
-    //   expect($('html').hasClass('nav-left-open')).toBe(true);
-    //   elm.find('li.nav-top-toggle').triggerHandler('click');
-    //   scope.$digest();
-    //   expect($('html').hasClass('nav-left-open')).toBe(false);
-    // });
+    it('when sidenav is open close it again',function(){
+      var elm = compileDirective('withSidenav');
+      elm.find('li.nav-top-toggle').triggerHandler('click');
+      scope.$digest();
+      setTimeout(function(){
+        expect($('html').hasClass('nav-left-open')).toBe(true);
+      },0);
+      elm.find('li.nav-top-toggle').triggerHandler('click');
+      scope.$digest();
+      setTimeout(function(){
+        expect($('html').hasClass('nav-left-open')).toBe(false);
+      },0);
+    });
   });
 
 });
