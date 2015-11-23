@@ -19,23 +19,25 @@ Tink is an in-house developed easy-to-use front-end framework for quick prototyp
 
 1. Go to the root of your project and type the following command in your terminal:
 
-   `bower install tink-navigation-angular --save`
+  `bower install tink-navigation-angular --save`
 
 2. Add the following files to your project:
 
-   `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
+  `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
 
-   `<script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>`
+  `<script src="bower_components/jquery/dist/jquery.js"></script>`
 
-   `<script src="bower_components/lodash/lodash.js"></script>`
+  `<script src="bower_components/tink-navigation-angular/dist/tink-navigation-angular.js"></script>`
 
-   `<script src="bower_components/tink-api-javascript/dist/tink-api-javascript.js"></script>`
+  `<script src="bower_components/lodash/lodash.js"></script>`
 
-   `<script src="bower_components/tink-api-angular/dist/tink-api-angular.js"></script>`
+  `<script src="bower_components/tink-api-javascript/dist/tink-api-javascript.js"></script>`
+
+  `<script src="bower_components/tink-api-angular/dist/tink-api-angular.js"></script>`
 
 3. Add `tink.navigation` and `tink.tinkApi` to your app module's dependency.
 
-   `angular.module('myApp', ['tink.navigation', 'tink.tinkApi']);`
+  `angular.module('myApp', ['tink.navigation', 'tink.tinkApi']);`
 
 
 
@@ -57,7 +59,7 @@ You can divide it in three sections (we assume the naming needs no explanation):
 
 Logo, company name and side navigation toggle go in `.nav-top-left`, each with their own class.
 
-**Very important!**
+> **Important!**
 To guarantee complete compatibility with Internet Explorer 9 `.nav-top-center` must come last in your html code.
 
 ```html
@@ -99,8 +101,8 @@ To guarantee complete compatibility with Internet Explorer 9 `.nav-top-center` m
 
 Attr | Type | Default | Details
 --- | --- | --- | ---
-data-tink-sidenav-collapse | `string` | `''` | Toggle the side navigation with the corresponding id. In order to make the toggle to work, the `data-toggle-id` attribute needs to be defined on the side navigation (see below).
-Use this attribute on the `.toggle item.
+data-tink-sidenav-collapse | `string` | `''` | Toggle the side navigation with the corresponding id. In order to make the toggle work, the `data-toggle-id` attribute needs to be defined on the side navigation (see below).
+Use this attribute on the toggle item.
 
 ### data-tink-nav-aside
 
@@ -119,7 +121,7 @@ Add `data-tink-nav-aside` to the `.nav-aside element in order to activate extra 
 * Detecting and collapsing submenus
 * Highlighting the active (sub)menu item
 
-###### Left or right navigation ######
+#### Left or right navigation
 
 The extra class `.nav-left` or `.nav-right` in the wrapping div will determine where your menu is positioned.
 
@@ -179,7 +181,7 @@ Attr | Type | Default | Details
 data-auto-select | `boolean` | `true` | When `true, the first submenu item is automatically selected when its corresponding (main) menu item is clicked.
 data-toggle-id | `string` | `''` | This id is used to trigger the menu by the `data-toggle-side-nav directive (see above).
 
-###### API code: ######
+#### API code:
 
 ```javascript
 var element = $("sidenav");
@@ -193,10 +195,6 @@ sideNav.init({
 // to open or close the menu
 sideNav.toggleMenu();
 ```
-
-### Example
-
-A working example can be found in [the Tink documentation](http://tink.digipolis.be/#/docs/directives/navigation#example).
 
 ## Contribution guidelines
 

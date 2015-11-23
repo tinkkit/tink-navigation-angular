@@ -15,6 +15,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 -->
 
 
+## [1.2.1] - 2015-11-23
+
+### Fixed
+- Fixed incomplete documentation
+
+
+
 ## [1.2.0] - 2015-10-12
 
 ### Changed
