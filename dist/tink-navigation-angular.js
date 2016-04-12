@@ -15,7 +15,12 @@
           return;
         }
 
-        var opts= {};
+        var opts= {
+            
+        };
+        if(attr.extraTop){
+            opts.extraTop = parseInt(attr.extraTop);
+        }
         if(attr.autoSelect){
           opts.autoSelect = (attr.autoSelect === 'true');
         }

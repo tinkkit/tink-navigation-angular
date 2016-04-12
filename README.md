@@ -1,6 +1,6 @@
 # Tink navigation Angular directive
 
-v1.2.0
+v2.0.0
 
 ## What is this repository for?
 
