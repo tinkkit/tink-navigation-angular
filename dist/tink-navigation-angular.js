@@ -21,6 +21,11 @@
         if(attr.extraTop){
             opts.extraTop = parseInt(attr.extraTop);
         }
+        
+        if(attr.navId){
+          tinkApi.sideNav.register(attr.navId,elem);
+        }
+        
         if(attr.autoSelect){
           opts.autoSelect = (attr.autoSelect === 'true');
         }
